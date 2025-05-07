@@ -1,0 +1,23 @@
+[versions]
+kotlin = "2.1.0"
+mysql-jdbc-driver = "9.2.0"
+druid = "1.2.24"
+kronos = "0.0.2"
+kandyVer = "0.8.0"
+
+[libraries]
+driver-jdbc-mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql-jdbc-driver" }
+druid = { module = "com.alibaba:druid", version.ref = "druid" }
+kronos-core = { module = "com.kotlinorm:kronos-core", version.ref = "kronos"}
+kronos-jdbc-wrapper = { module = "com.kotlinorm:kronos-jdbc-wrapper", version.ref = "kronos" }
+kandy-api = { module = "org.jetbrains.kotlinx:kandy-api", version.ref = "kandyVer" }
+kandy-lets-plot = { module = "org.jetbrains.kotlinx:kandy-lets-plot", version.ref = "kandyVer" }
+
+[bundles]
+kandy = ["kandy-api", "kandy-lets-plot"]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin" }
+kotlin-noArg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlin" }
+kronos-gradle-plugin = { id = "com.kotlinorm.kronos-gradle-plugin", version.ref = "kronos" }
