@@ -12,6 +12,7 @@ kronos-core = { module = "com.kotlinorm:kronos-core", version.ref = "kronos"}
 kronos-jdbc-wrapper = { module = "com.kotlinorm:kronos-jdbc-wrapper", version.ref = "kronos" }
 kandy-api = { module = "org.jetbrains.kotlinx:kandy-api", version.ref = "kandyVer" }
 kandy-lets-plot = { module = "org.jetbrains.kotlinx:kandy-lets-plot", version.ref = "kandyVer" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 
 [bundles]
 kandy = ["kandy-api", "kandy-lets-plot"]

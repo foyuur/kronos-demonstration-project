@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    testImplementation(libs.kotlin.test)
     implementation(libs.driver.jdbc.mysql)
     implementation(libs.druid)
     implementation(libs.kronos.core)
