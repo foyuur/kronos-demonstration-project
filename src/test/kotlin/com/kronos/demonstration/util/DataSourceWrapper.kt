@@ -9,8 +9,8 @@ object DataSourceWrapper {
         DruidDataSource().apply {
             url =
                 "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false&rewriteBatchedStatements=true"
-            username = "****"
-            password = "******"
+            username = "root"
+            password = "rootroot"
             driverClassName = "com.mysql.cj.jdbc.Driver"
             initialSize = 5
             maxActive = 10
