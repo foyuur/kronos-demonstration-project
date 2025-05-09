@@ -73,7 +73,7 @@ class BasicTest {
         ) { user, relation, movie, address ->
             leftJoin(relation) { user.id == relation.id2 && user.sex == relation.gender }
             rightJoin(movie) { movie.year == user.id }
-            fullJoin(address) { address.userId == user.id }
+            innerJoin(address) { address.userId == user.id }
             select {
                 user.id + relation.gender + movie.id
             }
