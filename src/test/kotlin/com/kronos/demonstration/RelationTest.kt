@@ -31,6 +31,13 @@ class RelationTest {
     }
 
     @Test
+    fun testDrop() {
+        Kronos.dataSource.table.dropTable<School>()
+        Kronos.dataSource.table.dropTable<GroupClass>()
+        Kronos.dataSource.table.dropTable<Student>()
+    }
+
+    @Test
     fun testSync() {
         Kronos.dataSource.table.syncTable<School>()
         Kronos.dataSource.table.syncTable<GroupClass>()
