@@ -34,6 +34,9 @@ class BasicTest {
     @Test
     fun testSync() {
         Kronos.dataSource.table.syncTable<User>()
+        Kronos.dataSource.table.syncTable<UserRelation>()
+        Kronos.dataSource.table.syncTable<Movie>()
+        Kronos.dataSource.table.syncTable<Address>()
     }
 
     @Test
@@ -66,7 +69,7 @@ class BasicTest {
     @Test
     fun testJoin() {
         val result = User(1).join(
-            UserRelation(1, "123", 1, 1), Movie(1), Address(1)
+            UserRelation(1, "123", false, 1), Movie(1), Address(1)
         ) { user, relation, movie, address ->
             leftJoin(relation) { user.id == relation.id2 && user.sex == relation.gender }
             rightJoin(movie) { movie.year == user.id }
@@ -76,7 +79,7 @@ class BasicTest {
             }
             where { user.id == 1 }
             orderBy { user.id.desc() }
-        }.build()
+        }.query()
     }
 
 }
