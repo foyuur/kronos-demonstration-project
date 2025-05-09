@@ -68,8 +68,8 @@ class BasicTest {
 
     @Test
     fun testJoin() {
-        val result = User(1).join(
-            UserRelation(1, "123", false, 1), Movie(1), Address(1)
+        val result = User().join(
+            UserRelation(), Movie(), Address()
         ) { user, relation, movie, address ->
             leftJoin(relation) { user.id == relation.id2 && user.sex == relation.gender }
             rightJoin(movie) { movie.year == user.id }
